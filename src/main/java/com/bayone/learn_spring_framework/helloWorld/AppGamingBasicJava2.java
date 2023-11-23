@@ -2,32 +2,36 @@ package com.bayone.learn_spring_framework.helloWorld;
 
 import java.util.Arrays;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class AppGamingBasicJava2 {
+	
+	private static final Logger logInfo = LoggerFactory.getLogger(AppGamingBasicJava2.class);
 
 	public static void main(String[] args) {
 		//launch a Spring call
 		
 		try(var context  = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class))
 				{
-			System.out.println(context.getBean("name"));
-			System.out.println(context.getBean("age"));
+			logInfo.info(context.getBean("name").toString());
+			logInfo.info(context.getBean("age").toString());
 			
-			System.out.println(context.getBean("person"));
+			logInfo.info(context.getBean("person").toString());
 			
-			System.out.println(context.getBean("address2"));
+			logInfo.info(context.getBean("address2").toString());
 			
-			System.out.println(context.getBean(Address.class));
-			System.out.println(context.getBean(Person.class));
+			logInfo.info(context.getBean(Address.class).toString());
+			logInfo.info(context.getBean(Person.class).toString());
 			
-			System.out.println(context.getBean("person3Parameters"));
+			logInfo.info(context.getBean("person3Parameters").toString());
 			
-			System.out.println(context.getBean("person2"));
+			logInfo.info(context.getBean("person2").toString());
 			
 			Arrays.stream(context.getBeanDefinitionNames()).forEach(System.out::println);
 			
-			System.out.println("personQualifier");
+			logInfo.info("personQualifier");
 				}
 		
 		//var context  = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
