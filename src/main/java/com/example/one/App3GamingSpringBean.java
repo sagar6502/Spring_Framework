@@ -2,7 +2,7 @@ package com.example.one;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class AppGamingSpringBean {
+public class App3GamingSpringBean {
 
 	public static void main(String[] args) {
 		
